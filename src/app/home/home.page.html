@@ -1,0 +1,45 @@
+<ion-content>
+  <h1 class="titulo">Calcula Festão</h1>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="limpar()">
+      <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div class="conteudo">
+    <div class="linha">
+      <div class="produto">Quantidade de Adultos</div>
+      <div class="mostrador">
+        <ion-button (click)="removerAdultos()">-</ion-button>
+        <input type="number" [(ngModel)]="quantidadeAdultos" (keyup)="calcularTotalInsumos()">
+        <ion-button (click)="adicionarAdultos()">+</ion-button>
+      </div>
+    </div>
+
+    <div class="linha">
+      <div class="produto">Quantidade de Crianças</div>
+      <div class="mostrador">
+        <ion-button (click)="removerCriancas()">-</ion-button>
+        <input type="number" [(ngModel)]="quantidadeCriancas" (keyup)="calcularTotalInsumos()">
+        <ion-button (click)="adicionarCriancas()">+</ion-button>
+      </div>
+    </div>
+
+    <div class="linha resultado">
+      <div>Quantidade de Salgadinhos</div>
+      <div>{{totalSalgadinho}}un</div><br>
+    </div>
+
+    <div class="linha resultado">
+      <div>Quantidade de Bolo</div>
+      <div>{{totalBolo}}{{siglaBolo}}</div><br>
+    </div>
+
+    <div class="linha resultado">
+      <div>Quantidade de Refrigerante</div>
+      <div>{{totalRefrigerante}}{{siglaRefrigerante}}</div>
+    </div>
+
+  </div>
+</ion-content>
